@@ -47,7 +47,8 @@ const DetailPost = ({ route }) => {
                 style={{
                     fontSize: 18,
                     marginTop: 20,
-                    fontWeight: '700'
+                    fontWeight: '700',
+                    color: '#ad40af'
                 }}
             >
                 Comments :
@@ -71,7 +72,7 @@ const DetailPost = ({ route }) => {
                                             style={{
                                                 flexDirection: 'row',
                                                 justifyContent: 'space-between',
-                                                borderBottomColor: '#171717',
+                                                borderBottomColor: '#ad40af',
                                                 borderBottomWidth: 1,
                                                 paddingVertical: 3
                                             }}
@@ -80,7 +81,7 @@ const DetailPost = ({ route }) => {
                                             <FontAwesome5Icon
                                                 name='user-circle'
                                                 size={20}
-                                                color="#171717"
+                                                color="#ad40af"
                                             />
                                         </View>
                                         <Text

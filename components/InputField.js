@@ -14,7 +14,7 @@ const InputField = ({
                 borderBottomColor: '#ccc',
                 borderBottomWidth: 1,
                 paddingBottom: 8,
-                marginBottom: 25
+                marginBottom: 10
             }}
         >
             {inputType === 'password' ? (

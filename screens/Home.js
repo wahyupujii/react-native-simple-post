@@ -17,8 +17,9 @@ const headerHome = (data, navigation) => {
                 <Text
                     style={{
                         fontSize: 18,
-                        color: '#C4C4C4',
-                        lineHeight: 20
+                        color: '#ad40af',
+                        lineHeight: 20,
+                        fontWeight: '900'
                     }}
                 >
                     Halo !!
@@ -29,7 +30,7 @@ const headerHome = (data, navigation) => {
                 <FontAwesomeIcon
                     name='user-circle'
                     size={30}
-                    color="#666"
+                    color="#ad40af"
                     onPress={() => navigation.navigate("Login")}
                 />
             </View>
@@ -65,13 +66,9 @@ const postList = (data, navigation) => {
                                         style={{
                                             padding: 20,
                                             margin: 10,
-                                            borderColor: '#171717',
+                                            borderColor: '#ad40af',
                                             borderWidth: 1,
-                                            borderRadius: 10,
-                                            shadowColor: '#171717',
-                                            shadowOffset: { width: 0, height: 0 },
-                                            shadowOpacity: 1,
-                                            shadowRadius: 10,
+                                            borderRadius: 5,
                                         }}
                                     >
                                         <Text
@@ -89,7 +86,7 @@ const postList = (data, navigation) => {
                                         >
                                             <Text
                                                 style={{
-                                                    color: 'blue',
+                                                    color: '#ad40af',
                                                     textAlign: 'right',
                                                     fontWeight: '900',
                                                 }}

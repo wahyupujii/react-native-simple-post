@@ -12,6 +12,7 @@ const CustomButton = ({
                 backgroundColor: '#ad40af',
                 padding: 10,
                 borderRadius: 10,
+                marginTop: 10,
             }}
         >
             <Text

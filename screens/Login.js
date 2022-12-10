@@ -1,14 +1,17 @@
+import React, { useState, useEffect } from 'react'
 import {
     SafeAreaView,
     View,
     Text,
-    TextInput
+    Image,
+    Alert,
+    TouchableOpacity,
+    ScrollView
 } from 'react-native'
-import React, { useState, useEffect } from 'react'
 import { InputField, CustomButton } from "../components"
 import axios from 'axios';
 
-// import user from "../constants/user"
+import LoginSVG from "../assets/Login.svg";
 
 const Login = ({ navigation }) => {
     const [inputs, setInputs] = useState({});
@@ -37,59 +40,148 @@ const Login = ({ navigation }) => {
     }
 
     return (
-        <SafeAreaView
+        <ScrollView
             style={{
                 flex: 1,
-                justifyContent: 'center',
-                backgroundColor: 'white'
+                backgroundColor: 'white',
+                paddingVertical: 40,
+                paddingHorizontal: 25,
             }}
         >
-            {
-                loading ? (
-                    <Text>Please Wait ... </Text>
-                ) : (
-                    <View
-                        style={{
-                            padding: 25,
-                            shadowColor: '#171717',
-                            shadowOffset: { width: 0, height: 0 },
-                            shadowOpacity: 0.2,
-                            shadowRadius: 10,
-                        }}
-                    >
-                        <Text
-                            style={{
-                                fontSize: 28,
-                                fontWeight: '500',
-                                color: '#333',
-                                marginBottom: 30
-                            }}
-                        >
-                            Login
-                        </Text>
+            <SafeAreaView>
+                {
+                    loading ? (
+                        <Text>Please Wait ... </Text>
+                    ) : (
+                        <View>
 
-                        <InputField
-                            label={'Username'}
-                            name="username"
-                            onChangeValue={handleChange}
-                        />
+                            <View
+                                style={{
+                                    flexDirection: 'row',
+                                    justifyContent: 'center'
+                                }}
+                            >
+                                {/* <Image
+                                    source={require("../assets/Login.png")}
+                                    style={{
+                                        width: 200,
+                                        height: 200
+                                    }}
+                                /> */}
+                                <LoginSVG 
+                                    width={200}
+                                    height={200}
+                                />
+                            </View>
 
-                        <InputField
-                            label={'Email'}
-                            name="email"
-                            onChangeValue={handleChange}
-                        />
+                            <View
+                                style={{
+                                    shadowColor: '#171717',
+                                    shadowOffset: { width: 0, height: 0 },
+                                    shadowOpacity: 0.2,
+                                    shadowRadius: 10,
+                                    marginVertical: 25
+                                }}
+                            >
+                                <Text
+                                    style={{
+                                        fontSize: 28,
+                                        fontWeight: '900',
+                                        color: '#333',
+                                        marginBottom: 10
+                                    }}
+                                >
+                                    Login
+                                </Text>
 
-                        <CustomButton
-                            onPress={submit}
-                            label="Login"
-                        />
+                                <InputField
+                                    label={'Username'}
+                                    name="username"
+                                    onChangeValue={handleChange}
+                                />
 
-                    </View>
-                )
-            }
+                                <InputField
+                                    label={'Email'}
+                                    name="email"
+                                    onChangeValue={handleChange}
+                                />
 
-        </SafeAreaView>
+                                <CustomButton
+                                    onPress={submit}
+                                    label="Login"
+                                />
+
+                            </View>
+
+                            <Text
+                                style={{
+                                    marginBottom: 25,
+                                    textAlign: 'center',
+                                    color: '#ad40af'
+                                }}
+                            >Or Login With</Text>
+
+                            <View
+                                style={{
+                                    flexDirection: 'row',
+                                    paddingHorizontal: 25,
+                                    justifyContent: 'space-between'
+                                }}
+                            >
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        Alert.alert(
+                                            "Icon Google",
+                                            "You clicked icon google",
+                                        )
+                                    }}
+                                >
+                                    <Image
+                                        source={require("../assets/google.png")}
+                                        style={{
+                                            width: 30,
+                                            height: 30,
+                                        }}
+                                    />
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        Alert.alert(
+                                            "Icon Linkedin",
+                                            "You clicked icon linkedin",
+                                        )
+                                    }}
+                                >
+                                    <Image
+                                        source={require("../assets/linkedin.png")}
+                                        style={{
+                                            width: 30,
+                                            height: 30,
+                                        }}
+                                    />
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={() => {
+                                        Alert.alert(
+                                            "Icon Github",
+                                            "You clicked icon github",
+                                        )
+                                    }}
+                                >
+                                    <Image
+                                        source={require("../assets/github.png")}
+                                        style={{
+                                            width: 30,
+                                            height: 30,
+                                        }}
+                                    />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    )
+                }
+            </SafeAreaView>
+        </ScrollView>
     )
 }
 
